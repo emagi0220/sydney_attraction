@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sydney 2026 · 玩点小册子（无图版）</title>
+<style>
+  :root{
+    --bg:#0b1020;
+    --card:#121b34;
+    --card2:#0f172e;
+    --line:rgba(255,255,255,.12);
+    --text:#eef3ff;
+    --muted:#aab6d6;
+
+    /* 分类色 */
+    --big:#7aa7ff;     /* 大景点/深度参观/体验 */
+    --pass:#6fe7a6;    /* 路过/小景点 */
+    --eat:#ffb36b;     /* 餐厅/吃 */
+    --play:#ffd36b;    /* 玩法/建议（更亮一点，方便快速抓重点） */
+    --tip:#c6a7ff;     /* 交通/票务/实用 */
+    --warn:#ff6b7d;    /* 风险/注意 */
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:
+      radial-gradient(900px 520px at 18% 10%, rgba(122,167,255,.20), transparent 62%),
+      radial-gradient(800px 450px at 82% 16%, rgba(255,179,107,.18), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    line-height:1.75;
+  }
+
+  .wrap{max-width:980px;margin:0 auto;padding:16px 12px 56px;}
+  header{
+    border:1px solid var(--line);
+    background:linear-gradient(180deg, rgba(18,27,52,.88), rgba(15,23,46,.70));
+    border-radius:18px;
+    overflow:hidden;
+  }
+  .cover{height:140px;background:linear-gradient(120deg, rgba(122,167,255,.28), rgba(255,211,107,.14));}
+  .head{padding:14px 14px 16px;}
+  .kicker{letter-spacing:.18em;font-weight:900;font-size:12px;color:var(--play);}
+  h1{margin:8px 0 6px;font-size:24px;line-height:1.25}
+  .sub{margin-top:10px;color:var(--muted);font-size:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .chip{border:1px solid var(--line);background:rgba(15,23,46,.55);border-radius:999px;padding:7px 10px;font-size:12px;color:var(--text)}
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:-1px}
+  nav{
+    border-top:1px solid var(--line);
+    background:rgba(15,23,46,.35);
+    padding:10px 12px 12px;
+  }
+  nav a{
+    display:inline-block;
+    margin:6px 12px 0 0;
+    color:var(--big);
+    text-decoration:none;
+    font-size:13px;
+  }
+  nav a:hover{text-decoration:underline}
+
+  .day{
+    margin-top:14px;
+    border:1px solid var(--line);
+    background:rgba(18,27,52,.60);
+    border-radius:18px;
+    overflow:hidden;
+  }
+  .dayhead{
+    padding:14px 14px 12px;
+    border-bottom:1px solid var(--line);
+    background:rgba(15,23,46,.55);
+  }
+  .dayhead h2{margin:0;font-size:18px}
+  .meta{
+    margin-top:8px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    color:var(--muted);
+    font-size:12px;
+  }
+  .badge{
+    border:1px solid var(--line);
+    background:rgba(18,27,52,.45);
+    padding:6px 9px;
+    border-radius:999px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    padding:12px 14px 14px;
+  }
+  .card{
+    border:1px solid var(--line);
+    background:rgba(15,23,46,.45);
+    border-radius:14px;
+    padding:12px 12px;
+  }
+  .card h3{margin:0 0 8px;font-size:14px}
+  .item{
+    padding:10px 10px 10px 12px;
+    border:1px solid var(--line);
+    background:rgba(15,23,46,.35);
+    border-radius:14px;
+    margin:10px 0;
+  }
+
+  .tag{
+    display:inline-block;
+    font-weight:950;
+    font-size:12px;
+    padding:3px 10px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.15);
+    margin:0 8px 8px 0;
+  }
+  .tag.big{color:var(--big); background:rgba(122,167,255,.10); border-color:rgba(122,167,255,.25);}
+  .tag.pass{color:var(--pass); background:rgba(111,231,166,.10); border-color:rgba(111,231,166,.25);}
+  .tag.eat{color:var(--eat); background:rgba(255,179,107,.10); border-color:rgba(255,179,107,.25);}
+  .tag.play{color:var(--play); background:rgba(255,211,107,.10); border-color:rgba(255,211,107,.25);}
+  .tag.tip{color:var(--tip); background:rgba(198,167,255,.10); border-color:rgba(198,167,255,.25);}
+  .tag.warn{color:var(--warn); background:rgba(255,107,125,.10); border-color:rgba(255,107,125,.25);}
+
+  ul{margin:8px 0 0; padding-left:18px; color:var(--muted); font-size:14px;}
+  li{margin:6px 0}
+  .key{color:var(--text); font-weight:900;}
+  .foot{margin-top:14px;color:var(--muted);font-size:12px;padding:0 2px;}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <header>
+    <div class="cover"></div>
+    <div class="head">
+      <div class="kicker">SYDNEY PLAYBOOK · NO IMAGES</div>
+      <h1>悉尼 2026 玩点小册子（只做介绍｜拿着就能玩）</h1>
+      <div class="sub">按你行程顺序，把每一项「景点/体验/餐厅/活动」拆开讲清楚：看什么、怎么走、怎么玩更流行、带娃怎么省力。</div>
+      <div class="chips">
+        <span class="chip">📍 City + 周边</span>
+        <span class="chip">👶 4岁友好提醒</span>
+        <span class="chip">🧭 重点=快速可执行</span>
+      </div>
+      <div class="legend">
+        <span class="chip"><span class="dot" style="background:var(--big)"></span>大景点/深度</span>
+        <span class="chip"><span class="dot" style="background:var(--pass)"></span>路过/小景点</span>
+        <span class="chip"><span class="dot" style="background:var(--eat)"></span>餐厅</span>
+        <span class="chip"><span class="dot" style="background:var(--play)"></span>流行玩法</span>
+        <span class="chip"><span class="dot" style="background:var(--tip)"></span>实用/交通/票务</span>
+        <span class="chip"><span class="dot" style="background:var(--warn)"></span>注意</span>
+      </div>
+    </div>
+
+    <nav>
+      <div style="font-weight:900;margin-bottom:6px;color:var(--muted);font-size:12px;letter-spacing:.12em;">JUMP TO DAY</div>
+      <a href="#d214">2/14</a>
+      <a href="#d215">2/15</a>
+      <a href="#d216">2/16</a>
+      <a href="#d217">2/17</a>
+      <a href="#d218">2/18</a>
+      <a href="#d219">2/19</a>
+      <a href="#d220">2/20</a>
+      <a href="#d221">2/21</a>
+      <a href="#d222">2/22</a>
+    </nav>
+  </header>
+
+  <!-- ===================== 2/14 ===================== -->
+  <section class="day" id="d214">
+    <div class="dayhead">
+      <h2>2/14 Sat · 初到悉尼：歌剧院 + The Rocks + Lunar Streets + 烟花</h2>
+      <div class="meta">
+        <span class="badge">适合：第一眼城市震撼 / 夜生活氛围</span>
+        <span class="badge">建议：把「走路看景」当作主线</span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>📌 这一天下来你会收获什么</h3>
+        <ul>
+          <li><span class="key">港湾经典三件套：</span>歌剧院外景 + The Rocks 老城氛围 + 海港大桥视角</li>
+          <li><span class="key">最强节日加成：</span>Haymarket 的 Sydney Lunar Streets（夜间街区派对）+ Darling Harbour 烟花</li>
+          <li><span class="key">体力策略：</span>落地后不“硬攻”博物馆，把精力留给夜景与氛围</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>🗺️ 景点 / 体验 / 活动（按你顺序）</h3>
+
+        <div class="item">
+          <span class="tag tip">实用</span>
+          <div class="key">WWS Townhall / Sydney Town Hall / Opal</div>
+          <ul>
+            <li>这是你后面几天“交通效率”的底盘：把 <span class="key">Opal</span> 或手机支付（如可用）先理顺，后面坐船/公交就顺滑。</li>
+            <li>带娃推车：先观察 <span class="key">人行道坡度、过街等候时间、电梯位置</span>，你后面会感谢自己。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag play">流行玩法</span><span class="tag tip">交通</span>
+          <div class="key">Barangaroo Wharf → Circular Quay（坐船当观景游船）</div>
+          <ul>
+            <li>把“通勤船”当“游船”：上船就站外侧/靠栏杆，第一眼看 <span class="key">城市天际线 + 海港水面</span>，极其出片（无论你拍不拍）。</li>
+            <li>推车技巧：尽量在靠边位置停靠，减少人流穿梭；上下船优先找工作人员/扶手位。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag big">大景点</span>
+          <div class="key">悉尼歌剧院（外部）</div>
+          <ul>
+            <li>“必看点”不是进去，而是：<span class="key">壳体曲面近距离纹理</span> + <span class="key">海风与广场尺度</span>（尤其黄昏光线变柔时）。</li>
+            <li>流行玩法：不要只在正门拍，建议绕一下找到 <span class="key">侧面角度</span>，能同时把港湾与建筑关系拍出来。</li>
+            <li>带娃：在外场走动空间大，孩子不需要“憋着坐”，更适合第一天。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag big">大景点</span><span class="tag play">逛法</span>
+          <div class="key">The Rocks Markets + The Rocks 老城氛围</div>
+          <ul>
+            <li>这里的价值：<span class="key">历史街区质感</span>（石板路、老建筑尺度）+ <span class="key">手作摊位与街头表演</span>。</li>
+            <li>流行玩法：按“只买一件”原则（避免拖累体力）——挑一个最想带回家的小物/手作当仪式感。</li>
+            <li>带娃：把它当“慢逛 + 休息 + 吃点小口”的站点，不要硬把所有摊位扫一遍。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag pass">路过</span>
+          <div class="key">海港大桥 / Walsh Bay Arts Precinct / Cadmans Cottage（路过看点）</div>
+          <ul>
+            <li>海港大桥：第一天的重点是 <span class="key">“体量震撼”</span>，不用急着上桥；找能抬头看的位置就够爽。</li>
+            <li>Walsh Bay：木栈道和水边气质很“悉尼”，适合随手停一下让孩子放风。</li>
+            <li>Cadmans Cottage：属于“悉尼历史感”彩蛋点，路过看一眼即可，不必消耗时间排队。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag eat">餐厅</span>
+          <div class="key">Hurricane's Grill Circular Quay（晚饭）</div>
+          <ul>
+            <li>它的意义是“落地第一顿”稳定：位置方便、氛围热闹，适合把身体节奏拉回旅行状态。</li>
+            <li>带娃：提前确认 <span class="key">儿童餐/高脚椅</span>，尽量坐外侧更不压迫。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag play">节日玩法</span><span class="tag big">氛围</span>
+          <div class="key">Chinatown / Haymarket · Sydney Lunar Streets（夜间街区派对）</div>
+          <ul>
+            <li>这是“当下加成”的部分：夜里人气、灯光、摊位、表演会把城市气氛拉满。</li>
+            <li>玩法建议：别追求“全覆盖”，选 <span class="key">一个主街区</span> 慢慢走，看到喜欢的表演就停，孩子也更舒服。</li>
+            <li>带娃：准备一点小零食/水，减少排队焦虑；人多时推车尽量走外围。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag play">夜景</span><span class="tag tip">时间</span>
+          <div class="key">Darling Harbour 烟花（21:00）</div>
+          <ul>
+            <li>最实用玩法：提前 15–25 分钟到水边找位置，避免抱娃+人潮挤。</li>
+            <li>看点：水面反射会让“视觉震撼”翻倍；看完不恋战，顺着人流快撤。</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2/15 ===================== -->
+  <section class="day" id="d215">
+    <div class="dayhead">
+      <h2>2/15 Sun · Taronga Zoo 深玩 + 市区小博物馆 + 日落 + 天文台</h2>
+      <div class="meta">
+        <span class="badge">主线：动物园体验拉满 + 轻量历史博物馆</span>
+        <span class="badge">带娃：这是“孩子最开心”的一天之一</span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>🐨 塔龙加动物园（Taronga Zoo）怎么“玩得值”</h3>
+
+        <div class="item">
+          <span class="tag big">大景点</span><span class="tag play">亲子玩法</span>
+          <div class="key">Taronga Zoo（北门进/南门出）</div>
+          <ul>
+            <li>这座动物园的“必杀技”是：<span class="key">动物 + 悉尼港湾景观同框</span>，很多观景点比纯动物园更震撼。</li>
+            <li>流行玩法：把你已排好的 keeper talk 当“路线锚点”，中间穿插“阴凉处休息 + 喝水 + 轻食”，节奏会非常稳。</li>
+            <li>带娃：优先保证 <span class="key">互动类（Encounter）</span> 的体验质量，其余动物“看见就算赚到”。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag big">大体验</span><span class="tag tip">票务</span>
+          <div class="key">Koala Encounter / Giraffe Encounter（你已安排）</div>
+          <ul>
+            <li>Koala Encounter：官方信息显示每天在 <span class="key">11:00–12:55</span> 之间有多场短时段（约几分钟）互动，数量有限，建议早到锁定名额。</li>
+            <li>Giraffe Encounter：同样是限名额小组互动，按园内指引现场/到店确认，<span class="key">越早越稳</span>。</li>
+            <li>带娃：让孩子先“摸/看/拍”而不是先讲知识，体验会更顺。</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <h3>🏛️ 下午市区：小而精的历史点怎么安排</h3>
+
+        <div class="item">
+          <span class="tag big">大景点</span>
+          <div class="key">Museum of Sydney（你已订）</div>
+          <ul>
+            <li>定位：适合“快速补上悉尼城市起源”的一站，体量不压迫、很适合动物园后半天。</li>
+            <li>玩法：进去先找“城市时间线/原住民与殖民叙事”核心展陈，别贪多。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag big">大景点</span>
+          <div class="key">Justice and Police Museum（你 note 里已订）</div>
+          <ul>
+            <li>定位：更“故事性”的悉尼社会史（犯罪、执法、城市暗面），适合喜欢叙事的人。</li>
+            <li>带娃：如果孩子在下午容易疲劳，这个点可以“快进式参观”，只看最核心的几处展示就走。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag pass">路过</span>
+          <div class="key">Customs House / Mrs Macquarie's Point（路过 + 看景）</div>
+          <ul>
+            <li>这段的价值是“散步回血”：把脚步放慢，找一个能看水面的地方休息，反而让晚上的日落与天文台更有精神。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag eat">餐厅</span>
+          <div class="key">Nando's</div>
+          <ul>
+            <li>定位：稳定、出餐快、适合带娃收尾。吃完直接去日落点，节奏很顺。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag play">日落</span>
+          <div class="key">Observatory Hill Park（日落）</div>
+          <ul>
+            <li>看点：城市天际线 + 港湾光线变化。黄昏时风会更明显，带一件薄外套更舒适。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag big">大体验</span><span class="tag warn">体力</span>
+          <div class="key">Sydney Observatory Guided Tour（夜间导览）</div>
+          <ul>
+            <li>看点：在高点俯瞰港湾 + 进入穹顶看 <span class="key">历史与现代望远镜</span>；有机会观测天体（天气影响很大）。</li>
+            <li>注意：导览通常需要走很多楼梯，带娃建议 <span class="key">提前上厕所 + 准备小零食</span>，减少中途崩溃。</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2/16 ===================== -->
+  <section class="day" id="d216">
+    <div class="dayhead">
+      <h2>2/16 Mon · 海事博物馆 + Fish Market + QVB + Hyde Park Barracks + State Library</h2>
+      <div class="meta">
+        <span class="badge">主线：室内外混搭，体力友好</span>
+        <span class="badge">关键词：建筑美学 + 轻知识 + 好走</span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>⚓ Australian National Maritime Museum（海事博物馆）</h3>
+        <div class="item">
+          <span class="tag big">大景点</span><span class="tag play">亲子玩法</span><span class="tag tip">时间</span>
+          <div class="key">Australian National Maritime Museum</div>
+          <ul>
+            <li>定位：澳洲“海洋叙事”的国家级博物馆，主题从航海、移民、海军到探险，信息量很大但不枯燥。</li>
+            <li>流行玩法：优先找 <span class="key">互动/亲子区域</span>（适合孩子动手），再去看你最感兴趣的主展；这样不会“成人爽、孩子崩”。</li>
+            <li>官方信息：常规开放时间 <span class="key">10:00–16:00</span>（最后上船/登舰时间会更早）。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🦪 午后城市动线：吃 + 逛 + 建筑</h3>
+
+        <div class="item">
+          <span class="tag eat">吃</span><span class="tag play">玩法</span>
+          <div class="key">Fish Market（午饭）</div>
+          <ul>
+            <li>玩法：别只“吃饱”，试试“分食策略”——选 2–3 样不同口感（生/熟/炸）共享，孩子也能参与挑选。</li>
+            <li>带娃：优先找通风/靠边的位置坐下，避免端着食物在拥挤区穿梭。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag big">大景点</span><span class="tag play">建筑控</span>
+          <div class="key">QVB（Queen Victoria Building）</div>
+          <ul>
+            <li>定位：与其说是商场，不如说是“可逛的历史建筑”——穹顶、拱廊、彩窗与中庭尺度非常值得看。</li>
+            <li>流行玩法：不急着买东西，先做 <span class="key">“抬头路线”</span>：走一圈中庭看穹顶 → 站在栏杆处看中庭纵深 → 再挑店。</li>
+            <li>带娃：把它当“室内休息站”，上洗手间/补水都很方便。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag pass">路过</span>
+          <div class="key">Sydney Tower Eye / 海德公园（路过）</div>
+          <ul>
+            <li>这段更像“换景”：在城市中轴线走一走，感受悉尼 CBD 的节奏与绿地对比。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag big">大景点</span><span class="tag tip">玩法</span>
+          <div class="key">海德公园兵营博物馆（Hyde Park Barracks）</div>
+          <ul>
+            <li>定位：世界遗产级别的历史建筑，主打“沉浸式音频导览 + 真实文物”，讲早期殖民与劳役系统的历史。</li>
+            <li>玩法：进去先把音频导览开起来，会比“看展板”好懂很多；建议预留 60–90 分钟。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag big">大景点</span><span class="tag play">隐藏彩蛋</span>
+          <div class="key">State Library of New South Wales（州立图书馆）</div>
+          <ul>
+            <li>定位：建筑与空间非常美，适合“安静但不无聊”的傍晚行程。</li>
+            <li>流行玩法：关注是否能赶上 <span class="key">免费导览</span>（常见为中午时段/固定日），以及去看看标志性阅览空间（孩子也会被“巨大安静房间”震住）。</li>
+            <li>带娃：把它当“降噪站”——安静走一圈就走，不要强迫孩子久坐。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag eat">餐厅</span>
+          <div class="key">Nomad（晚饭）</div>
+          <ul>
+            <li>这是“收官大餐”型：建议点 2–3 道你们最想吃的主打，不追求全套，留力给回酒店采购明天远途补给。</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2/17 ===================== -->
+  <section class="day" id="d217">
+    <div class="dayhead">
+      <h2>2/17 Tue · Anna Bay 沙丘 + 海豚 + Irukandji 亲水体验 + 野生袋鼠</h2>
+      <div class="meta">
+        <span class="badge">主线：户外刺激 + 亲海 + 小动物</span>
+        <span class="badge">注意：这是“交通日”，把吃喝补给备好</span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>🏜️ Anna Bay：滑沙 / 骑骆驼（沙丘玩法）</h3>
+        <div class="item">
+          <span class="tag big">大体验</span><span class="tag play">刺激玩法</span><span class="tag warn">防晒</span>
+          <div class="key">Anna Bay 滑沙 + 骑骆驼</div>
+          <ul>
+            <li>滑沙“更好玩”的关键：先选一个孩子也敢滑的小坡，让他建立成就感，再决定要不要挑战更高坡。</li>
+            <li>防晒与沙：帽子/墨镜/防晒必备；衣服尽量选不怕脏的，袜子建议包住脚踝减少进沙。</li>
+            <li>骑骆驼：排队时用“观察任务”给孩子（数骆驼、找最喜欢的颜色），能显著降低等待焦虑。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🐬 海豚 + 🦈 Irukandji：当天的“必打卡”组合</h3>
+
+        <div class="item">
+          <span class="tag eat">吃</span><span class="tag tip">快进</span>
+          <div class="key">Little Mavs Seafood Takeaway（快速午饭）</div>
+          <ul>
+            <li>策略：只求“快 + 补能量”。优先点孩子肯吃的，再加一份你们想吃的海味。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag big">大体验</span><span class="tag play">观海豚</span>
+          <div class="key">Dolphine Discovery Tour</div>
+          <ul>
+            <li>玩法：上船后先找孩子能安全坐稳的位置，再去看风景；海上风大，带一件薄外套非常有用。</li>
+            <li>带娃：准备 <span class="key">晕船糖/小零食</span>，以及一个“观测小游戏”（比如“谁先看到海豚背鳍”）。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag big">大体验</span><span class="tag play">亲水互动</span><span class="tag tip">开放</span>
+          <div class="key">Irukandji Shark & Ray Encounters（Anna Bay）</div>
+          <ul>
+            <li>定位：它的“王牌”不是看，而是 <span class="key">近距离互动与教育体验</span>（根据现场规则可升级亲水/近距离项目）。</li>
+            <li>建议：提前想好“孩子最想做的动作”——比如摸一摸/喂一喂/拍合照，围绕这个目标玩就很值。</li>
+            <li>实用：官方信息显示每天开放 <span class="key">9:00–17:00</span>，到场后按工作人员指引选体验节奏。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag pass">路过</span><span class="tag play">彩蛋</span>
+          <div class="key">Wyee Point Reserve（看野生袋鼠）</div>
+          <ul>
+            <li>玩法：别追求“必须看到很多”，把它当回程“惊喜彩蛋”。孩子一旦看到一只就会很开心。</li>
+            <li>注意：保持距离，不投喂；黄昏视线下降，牵好孩子。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag eat">餐厅</span>
+          <div class="key">Darling Quarter / Betty's Burgers（晚饭）</div>
+          <ul>
+            <li>定位：一天户外后，选择“快、好吃、孩子友好”的收尾最明智。</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2/18 ===================== -->
+  <section class="day" id="d218">
+    <div class="dayhead">
+      <h2>2/18 Wed · Watsons Bay 海岸线 + Bondi 到 Bronte 海边动线 + Double Bay 日落 + 夜间天文台</h2>
+      <div class="meta">
+        <span class="badge">主线：海岸线美学拉满（但要留体力）</span>
+        <span class="badge">关键词：短步道 + 观景点 + 海边餐厅</span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>🌊 Watsons Bay：South Head Heritage Trail & The Gap 怎么走更顺</h3>
+        <div class="item">
+          <span class="tag big">大景点</span><span class="tag play">流行步道</span><span class="tag tip">时长</span>
+          <div class="key">Camp Cove Beach / South Head Heritage Trail / Gap Bluff</div>
+          <ul>
+            <li>官方信息：South Head Heritage Trail 是 <span class="key">1km 环线</span>，建议用时约 <span class="key">30–60 分钟</span>，属于轻松好走的观景步道。</li>
+            <li>看点：海港入口的风、炮台遗迹感、以及红白相间的 Hornby Lighthouse（远景很出片）。</li>
+            <li>带娃：按“走一段就停一下”的节奏，找到一个安全观景点就当目标达成，不强求走完所有岔路。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🏖️ Bondi → Tamarama → Bronte：把“海边线”玩舒服</h3>
+
+        <div class="item">
+          <span class="tag pass">路过</span><span class="tag play">海岸线</span>
+          <div class="key">Bondi Beach / Tamarama Beach / Bronte Beach / Bronte Park Playground</div>
+          <ul>
+            <li>玩法：你这条线最聪明的是以 <span class="key">Bronte Park Playground</span> 作为“孩子放电终点”，大人也能坐着休息。</li>
+            <li>流行玩法：不追求走完整条“Bondi to Coogee”经典徒步，把精华（几段最美视角）截取就好。</li>
+            <li>注意：海边风与日晒叠加，补水和涂防晒要更勤。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag pass">路过</span>
+          <div class="key">Westfield Bondi Junction</div>
+          <ul>
+            <li>定位：补给/空调回血/洗手间站。带娃逛商场的意义是“恢复体力”，不是“硬买”。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag eat">餐厅</span>
+          <div class="key">Doyles on the Beach（Watsons）/ Macelleria Bondi / bills / Margret</div>
+          <ul>
+            <li>海边吃饭的重点：<span class="key">景观位 + 出餐速度</span>；孩子能吃、你能坐着看海，就是完美。</li>
+            <li>如果要“更流行的吃法”：优先选择 <span class="key">海边就近</span>，减少在高峰时段跨区移动。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag play">日落</span><span class="tag pass">路过</span>
+          <div class="key">Seven Shillings Beach / Double Bay Ferry</div>
+          <ul>
+            <li>玩法：在 Seven Shillings Beach 看“柔光海面”很舒服；看完直接上船回 Circular Quay，动线非常优雅。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag big">大体验</span><span class="tag warn">体力</span>
+          <div class="key">Sydney Observatory Guided Tour（夜）</div>
+          <ul>
+            <li>如果这天你们走海岸线走得很爽：天文台依然可以去，但建议把“期待值”放在 <span class="key">俯瞰夜景 + 建筑与望远镜</span> 上，观星受天气影响很大。</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2/19 ===================== -->
+  <section class="day" id="d219">
+    <div class="dayhead">
+      <h2>2/19 Thu · Australian Museum + Susannah Place（Grocer’s Shop）+ 重点逛商场夜场</h2>
+      <div class="meta">
+        <span class="badge">主线：博物馆 + 旧城生活史 + 晚上逛到 9 点</span>
+        <span class="badge">带娃：把“导览”当故事会更好</span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>🦴 Australian Museum（澳大利亚博物馆）</h3>
+        <div class="item">
+          <span class="tag big">大景点</span><span class="tag play">亲子友好</span>
+          <div class="key">Australian Museum</div>
+          <ul>
+            <li>定位：自然史/动物/人类学的综合馆，孩子通常对“骨骼、动物、巨型展品”非常买账。</li>
+            <li>玩法：先让孩子选一个“他最想看的主题”，你们就围绕这个主题走；成人再加 1–2 个你们想看的内容就够。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🏚️ Susannah Place · The Grocer’s Shop（你已购票）</h3>
+        <div class="item">
+          <span class="tag big">大体验</span><span class="tag tip">导览</span><span class="tag warn">楼梯</span>
+          <div class="key">Susannah Place Guided Tour: The Grocer's Shop</div>
+          <ul>
+            <li>定位：这是“悉尼老城普通人怎么生活”的一小时故事，内容更像“走进时间胶囊”。</li>
+            <li>官方提醒：一小时导览通常需要上下 <span class="key">很多楼梯（约几十级）</span>；带娃要预判体力，必要时抱一段。</li>
+            <li>玩法：把它当“沉浸式小剧场”——你不需要记知识点，只要把几个生活细节讲给孩子听，他会更投入。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag eat">餐厅</span>
+          <div class="key">Harry's Café de Wheels / Bar Totti's</div>
+          <ul>
+            <li>Harry’s：快进式补能量；Bar Totti’s：更像“认真吃一顿”。两者搭配刚好一轻一重。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag play">夜场</span><span class="tag tip">备选</span>
+          <div class="key">逛商场到 9 点 / 备用景点（野生动物园、水族馆、美术馆、现代艺术馆、MCA）</div>
+          <ul>
+            <li>这天的关键是“留弹性”：孩子状态好就加一处备用；状态一般就让商场成为舒适收尾。</li>
+            <li>若去 MCA（当代艺术馆）：更适合“随缘看一两层 + 观景/咖啡”式玩法，不要硬刷完。</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2/20 ===================== -->
+  <section class="day" id="d220">
+    <div class="dayhead">
+      <h2>2/20 Fri · Calmsley 农场 + Featherdale 动物园 + Chinese Garden Twilight Party + Arthur</h2>
+      <div class="meta">
+        <span class="badge">关键词：近距离动物互动 + 晚上灯光活动</span>
+        <span class="badge">这天行程密：提前把“必玩三件事”定好</span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>🐑 Calmsley Hill City Farm（农场）怎么玩更有参与感</h3>
+        <div class="item">
+          <span class="tag big">大体验</span><span class="tag play">亲子互动</span><span class="tag tip">表演时间</span>
+          <div class="key">Calmsley 农场</div>
+          <ul>
+            <li>它的核心不是“看”，而是“参与”：喂/摸/看挤奶/看工作犬（孩子会非常兴奋）。</li>
+            <li>官方展示：常见项目包括 <span class="key">Animal Patting（10:30）</span>、<span class="key">Cow Milking（11:00 & 14:30）</span>、<span class="key">Working Dog Show（13:00）</span> 等（以当天公告为准）。</li>
+            <li>玩法：你计划 9:00 出发很对——早点到能把关键表演都串起来，下午赶往 Featherdale 更稳。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🦘 Featherdale Sydney Wildlife Park：考拉合影 + Encounter 如何安排</h3>
+        <div class="item">
+          <span class="tag big">大体验</span><span class="tag tip">日程</span>
+          <div class="key">Featherdale（考拉合影 / Echidna Talk / Penguin Encounter）</div>
+          <ul>
+            <li>定位：近距离看澳洲本土动物非常高效，孩子容易持续兴奋。</li>
+            <li>官方信息：园区会公布当天 schedule（早上开园、考拉拍照点开放、Echidna talk、Penguin Encounter 等）。你写的 15:00/15:30 是很好的“锚点”。</li>
+            <li>玩法：先把 <span class="key">考拉合影</span> 办掉（越早越不焦虑），再围绕 encounters 安排中间走路看动物。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag eat">餐厅</span>
+          <div class="key">Arthur Surry Hills</div>
+          <ul>
+            <li>这顿是你们这趟的“仪式感晚餐”之一：建议点能代表店风格的招牌，再留力去晚上的 Twilight Party。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag play">夜场活动</span><span class="tag tip">时间</span>
+          <div class="key">Chinese Garden Twilight Party（5–9pm）</div>
+          <ul>
+            <li>定位：灯光 + 表演 + 夜间氛围加成，非常适合“生日当天的特别记忆”。</li>
+            <li>玩法：进去先走一圈找到 <span class="key">最喜欢的灯光区域</span> 拍/看，再回到舞台/互动区；孩子容易被灯吸引，尽量让他先“看满足”。</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2/21 ===================== -->
+  <section class="day" id="d221">
+    <div class="dayhead">
+      <h2>2/21 Sat · 两个市场 + 校园散步 + 市政厅表演 + Jet Pack + 烟花</h2>
+      <div class="meta">
+        <span class="badge">主线：本地感 + 夜间秀</span>
+        <span class="badge">带娃：市场=低门槛快乐</span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>🛍️ 市场怎么玩：别“逛到累”，要“逛到满足”</h3>
+
+        <div class="item">
+          <span class="tag pass">本地</span><span class="tag play">逛法</span>
+          <div class="key">Carriageworks Farmers Market</div>
+          <ul>
+            <li>玩法：只做两件事——吃一个“市场代表性食物” + 买一个“带走的小东西”。达到就撤，不恋战。</li>
+            <li>带娃：最适合让孩子做“挑选官”，他会更投入也更乖。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag pass">本地</span><span class="tag play">淘物</span>
+          <div class="key">Glebe Markets</div>
+          <ul>
+            <li>定位：更偏“淘货与摊位文化”，氛围很生活化。</li>
+            <li>玩法：设一个上限（比如 45–60 分钟），否则很容易越逛越散。</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <h3>🏛️ 城市文化 + 夜间秀</h3>
+
+        <div class="item">
+          <span class="tag big">大景点</span>
+          <div class="key">周泽荣博物馆 / 悉尼大学</div>
+          <ul>
+            <li>这两处的价值都在“空间美感”：建筑、草坪、校园尺度。适合慢走、拍照、让孩子跑两圈放电。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag eat">餐厅</span>
+          <div class="key">Macelleria Newtown</div>
+          <ul>
+            <li>定位：把它当“能量补给站”，吃完就准备进入夜间秀的节奏。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag play">表演</span>
+          <div class="key">市政厅歌舞秀（17:00–18:15）</div>
+          <ul>
+            <li>玩法：提前到一点点，选孩子也能看清/不太拥挤的位置；带一小包零食能大幅提升体验。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag play">秀</span><span class="tag play">烟花</span>
+          <div class="key">Darling Harbour Jet Pack Shows（20:45）+ 烟花（21:00）</div>
+          <ul>
+            <li>玩法：把这段当“夜间高潮双连击”。建议早一点找位置，避免“看秀 + 找烟花位”两头赶。</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2/22 ===================== -->
+  <section class="day" id="d222">
+    <div class="dayhead">
+      <h2>2/22 Sun · Manly 海边散步 + St Mary’s Cathedral 导览 + 返程</h2>
+      <div class="meta">
+        <span class="badge">主线：轻松海边线 + 一处庄重建筑收尾</span>
+        <span class="badge">关键词：不赶、不硬刷、舒服结束</span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>🏝️ Manly：最适合“最后一天”的海边动线</h3>
+
+        <div class="item">
+          <span class="tag big">大景点</span><span class="tag play">轻徒步</span><span class="tag tip">难度</span>
+          <div class="key">Manly Beach（Fairlight Walk / Shelly Beach / Fairy Bower Sea Pool / Cabbage Tree Bay）</div>
+          <ul>
+            <li>流行玩法：Manly → Shelly 这段属于“轻松好走、风景密集”的经典路线，途经 <span class="key">Fairy Bower Sea Pool</span> 和 <span class="key">Cabbage Tree Bay</span> 很加分。</li>
+            <li>带娃：把目标拆成 3 段——到一个小海湾就休息/补水/玩沙；孩子会更愿意走。</li>
+            <li>安全：海边石头湿滑，靠近海池边缘要牵手；如果孩子想下水，优先选更可控的海池区域。</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <h3>⛪ St Mary’s Cathedral：导览怎么更有仪式感</h3>
+
+        <div class="item">
+          <span class="tag big">大体验</span><span class="tag tip">导览</span>
+          <div class="key">St Mary's Cathedral Guided Tour（你已订）</div>
+          <ul>
+            <li>玩法：把它当“旅行最后一章”——走慢一点，关注建筑的高耸感、光线与回声，体验会更完整。</li>
+            <li>带娃：给孩子一个任务：找“最高的地方/最漂亮的窗/最喜欢的图案”，他会更专注。</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="tag tip">返程</span>
+          <div class="key">回酒店拿行李 → 机场</div>
+          <ul>
+            <li>建议：Manly 这段别玩太满，留出“回程缓冲”，最后一天最怕赶。</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <div>备注：这是“只做介绍”的小册子版本。你如果想我把每个点再加上「到达后 5 分钟内我该做什么」的超执行清单（比如从码头下船往哪边走、先看哪个角度、厕所在哪类位置更容易找），我可以继续把每一项再拆成更细的“现场指令”。</div>
+  </div>
+
+</div>
+</body>
+</html>
